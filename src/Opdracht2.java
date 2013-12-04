@@ -19,7 +19,7 @@ public class Opdracht2
     	  try
     	  {
     	  getallen[i] = Integer.parseInt(aantal[i]);
-    	
+    	  System.out.println(getallen[i]);
     	  }
     	  catch(NumberFormatException e)
     	  {

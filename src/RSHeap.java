@@ -9,18 +9,19 @@ public class RSHeap {
 	public RSHeap(int[] unsortedArray)
 	{
 		this.unsortedArray = unsortedArray;
-		size = 0;
-		//Dit wordt +1 door de arraygrens
-		theHeap = new int[unsortedArray.length + 1];
+		// -1 zodat hij op locatie 0 kan beginnen in de insert methode
+		size = -1;
+		
+		theHeap = new int[unsortedArray.length ];
 	
-		sortArray();
+		sortHeap();
 		// een uitkomst: [0, 9, 13, 43, 17, 16, 62, 48, 69, 44, 33].. Klopt volgens mij
 		
 		
 		
 	}
 	
-	public void sortArray()
+	public void sortHeap()
 	{
 		for(int i = 0; i < unsortedArray.length; i++)
 		{
@@ -34,7 +35,7 @@ public class RSHeap {
 		size++;
 		theHeap[size] = element;
 		int position = size;
-		
+		printHeap();
 		//Zolang de invoer kleiner is moet er geswapped tot de invoer op de juiste plek staat. De parent moet immers kleiner zijn dan haar kinderen
 		while(theHeap[position] < theHeap[parent(position)])
 		{
@@ -49,7 +50,7 @@ public class RSHeap {
 	
 	private int parent(int pos)
 	{
-		
+		//Want parent staat altijd op de locatie van: child / 2
 		return pos / 2;
 	}
 	
