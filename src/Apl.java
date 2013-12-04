@@ -24,7 +24,7 @@ public class Apl
         {
              writer = new PrintWriter(invoer);
             
-        	 for(int i=0; i< 100; i++)
+        	 for(int i=0; i< 10; i++)
 			 {
 				
 				 writer.print(Opdracht2.randInt(70));
@@ -44,7 +44,7 @@ public class Apl
         
       try
       {
-    	  scanner = new Scanner(invoer);
+    	 scanner = new Scanner(invoer);
      	 scanner.useDelimiter(", ");
      	 String gegevens = "";
      	 boolean eerste=false;
@@ -65,7 +65,7 @@ public class Apl
       }
       catch(FileNotFoundException e)
       {
-    	  
+    	  e.printStackTrace();
       }
       finally
       {

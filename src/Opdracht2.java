@@ -19,7 +19,7 @@ public class Opdracht2
     	  try
     	  {
     	  getallen[i] = Integer.parseInt(aantal[i]);
-    	  System.out.println(getallen[i]);
+    	
     	  }
     	  catch(NumberFormatException e)
     	  {
@@ -27,11 +27,7 @@ public class Opdracht2
     	  }
       }
       RSHeap heap = new RSHeap(getallen);
-      int[] array =heap.sortLijst();
-      for(int i =0; i< getallen.length; i++)
-      {
-    	  System.out.println(array[i]);
-      }
+
 	}
 	/**
 	 * 
