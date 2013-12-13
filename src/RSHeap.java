@@ -6,7 +6,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 
-public class RSHeap {
+public class RSHeap
+{
 	private int[] input;
 	private Heap theHeap;		
 	private int inputIndex = 0;
@@ -17,6 +18,7 @@ public class RSHeap {
 	
 	public RSHeap(int N)
 	{
+		assert N <0 : "ongeldige waarde";
 		heapSize = N;
 		input = new int[N];
 		this.theHeap = new Heap(heapSize);		
@@ -134,6 +136,7 @@ public class RSHeap {
 	
 	public BufferedWriter initWriter(String fileName)
 	{
+		assert fileName !=null : "filename mag niet leeg zijn";
 		try {
 
 			bw = new BufferedWriter(new FileWriter(new File(fileName)));
@@ -148,6 +151,8 @@ public class RSHeap {
 
 	public void writeToFile(BufferedWriter bw, int element)
 	{
+		assert bw !=null : "writer mag niet null zijn";
+		assert element < 0 : "element is ongeldig";
 		try {
 			bw.write(Integer.toString(element));
 			bw.newLine();
