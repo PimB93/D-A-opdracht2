@@ -6,14 +6,27 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+
 public class Test
 {
+
+/**
+ * 
+ * @author Pim Beuwer en Ralph de Groot
+ * Deze class voert tests uit van het programma met behulp van drie verschillende variabelen.
+ * De heapgrootte, de grootte van het bestand en het aantal keer dat het programma moet draaien.
+ */
+
+
 	RSHeap rs;
 	BufferedReader br;
 
 
-	/*
-	 * Test set x heapsize , invoerbestand met y elementen en z aantal keren draaien
+	/**
+	 * 
+	 * @param heapsize De grootte van de heap
+	 * @param elements De hoeveelheid getallen die in de input moet komen
+	 * @param amountOfTests Het aantal keer dat de rest uitgevoerd moet wordens
 	 */
 	public void runTest(int heapsize, int elements, int amountOfTests)
 	{
@@ -29,7 +42,7 @@ public class Test
 			// get the result of the test
 			ArrayList<Integer> tmpResult = readRuns();
 
-			// add it to the resultst
+			// add it to the results
 			results.add(tmpResult);
 			int runNumber =1;
 			System.out.println("test " + i);
@@ -73,22 +86,14 @@ public class Test
 		}
 
 
-		double[] deviation = new double[maxRuns];               
-		// calculate and print standard deviation
-		System.out.println("\n standard deviation:" );
-		for (int i = 0; i < maxRuns; i++) {
-			double sum = 0;
-			for (int h = 0; h< averageHelpList.length; h++){
-				sum += Math.pow((averageHelpList[h][i] - average[i]), 2);
-			}
-			double dev = Math.sqrt(sum / amountOfTests ); 
-			deviation[i]= dev;
-			System.out.println("\t run "+ i + ": "+dev);
-		}
+		
+		
 	}
 
-	/*
-	 * get the highest amount of runs
+	/**
+	 * 
+	 * @param tmpList De arraylist met de resultaten
+	 * @return Het hoogste aantal aan runs
 	 */
 	private int highestAmountOfRuns(ArrayList<ArrayList<Integer>> tmpList){
 		int max =0;
@@ -105,6 +110,7 @@ public class Test
 		return max;
 	}
 
+	
 	private ArrayList<Integer> readRuns(){
 		ArrayList<Integer> result = new ArrayList<Integer>();
 		try {

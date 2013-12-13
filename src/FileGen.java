@@ -2,18 +2,18 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
- * Class that writes random input to a file or generates one if the given file doesn't exist
- * @author 
- *
+ * 
+ * @author Pim Beuwer en Ralph de Groot
+ *	Deze class genereert een file met daarin random getallen
  */
 public class FileGen {
 	private int[] input;
 
 	/**
 	 * 
-	 * @param N the size of the array to write to the file
-	 * @param filename the name of the file to write to
-	 * @return the array that is generated
+	 * @param N De grootte van de array om naar de file toe te schrijven
+	 * @param de naam van de file waar naar geschreven zal worden
+	 * @return de inputarray
 	 */
 	public int[] generate(int N,String filename)
 	{
@@ -36,6 +36,9 @@ public class FileGen {
 		return input;
 	}
 
+	/**
+	 * Print alle getallen van de input
+	 */
 	private void print(){
 		System.out.println("Input {");
 		for (int i=0; i< input.length; i++){
