@@ -1,7 +1,8 @@
 import java.util.Arrays;
 
 
-public class Heap {
+public class Heap 
+{
 	private int []theHeap;
 	private int maxsize;
 	private int size;

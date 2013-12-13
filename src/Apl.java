@@ -7,19 +7,36 @@ public class Apl {
 	 */
 	public static void main(String[] args) 
 	{
+		//junit tests
+		
+		//file
+		FilegenTest testFile = new FilegenTest();
+		testFile.fileGoed();
+		//testFile.fileFouteInput();
+		//testFile.fileOngeldig();
+		
+		//heap
+		HeapTest testHeap = new HeapTest();
+		testHeap.HeapGoed();
+		//testHeap.fileFouteInput();
+		
 		
 		Test test = new Test();
-		Test test2 = new Test();
-		Test test3 = new Test();
-		Test test4 = new Test();
 		//test1
-		test.runTest(10, 1000, 10);
+		System.out.println("test1");
+		test.runTest(10, 1000,1);
+		
 		//test2
-		test2.runTest(10, 500, 10);
+		System.out.println("test2");
+		test.runTest(10, 500, 1);
 		//test3
-		test3.runTest(5, 1000, 5);
+		System.out.println("test3");
+		test.runTest(5, 1000,1);
 		//test4
-		test4.runTest(5, 500, 5);
+		System.out.println("test4");
+		test.runTest(5, 500, 1);
+		
+		
 	}
 
 }

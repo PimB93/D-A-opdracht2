@@ -18,7 +18,7 @@ public class RSHeap
 	
 	public RSHeap(int N)
 	{
-		assert N <0 : "ongeldige waarde";
+		assert N >0 : "ongeldige waarde";
 		heapSize = N;
 		input = new int[N];
 		this.theHeap = new Heap(heapSize);		
@@ -152,7 +152,7 @@ public class RSHeap
 	public void writeToFile(BufferedWriter bw, int element)
 	{
 		assert bw !=null : "writer mag niet null zijn";
-		assert element < 0 : "element is ongeldig";
+		//assert element > 0 : "element is ongeldig";
 		try {
 			bw.write(Integer.toString(element));
 			bw.newLine();

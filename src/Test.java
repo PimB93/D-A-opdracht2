@@ -6,7 +6,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class Test {
+public class Test
+{
 	RSHeap rs;
 	BufferedReader br;
 
@@ -14,7 +15,8 @@ public class Test {
 	/*
 	 * Test set x heapsize , invoerbestand met y elementen en z aantal keren draaien
 	 */
-	public void runTest(int heapsize, int elements, int amountOfTests){
+	public void runTest(int heapsize, int elements, int amountOfTests)
+	{
 		// run the test x amount of times
 		// make an arraylist of arraylists
 		ArrayList<ArrayList<Integer>> results = new ArrayList<ArrayList<Integer>>();

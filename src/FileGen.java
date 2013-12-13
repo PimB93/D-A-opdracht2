@@ -15,7 +15,10 @@ public class FileGen {
 	 * @param filename the name of the file to write to
 	 * @return the array that is generated
 	 */
-	public int[] generate(int N,String filename){
+	public int[] generate(int N,String filename)
+	{
+		assert N > 0 :"ongeldig getal";
+		assert filename.length() > 1 : "ongeldige filenaam";
 		input = new int[N];
 		try {
 			PrintWriter fw = new PrintWriter(filename,"UTF-8");
