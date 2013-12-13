@@ -1,9 +1,13 @@
-
+/**
+ * 
+ * @author Pim Beuwer en Ralp de Groot
+ * Deze class voert opdracht 2 uit
+ */
 public class Apl {
 
 	/**
 	 * @param args
-	 * instantiert 4 testen met verschillende input om de N & H te testen en aan te tonen 
+	 * instantieert 4 testen met verschillende input om de N & H te testen en aan te tonen 
 	 */
 	public static void main(String[] args) 
 	{

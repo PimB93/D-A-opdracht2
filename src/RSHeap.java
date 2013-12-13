@@ -5,7 +5,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-
+/**
+ * 
+ * @author Pim Beuwer en Ralph de Groot
+ * Deze class bevat methodes die een Replacement Selection kunnen uitvoeren op een minheap. 
+ * De minheap wordt opgeslagen in een Heap object. In de Heap class staan de methodes die gebruikt kunnen worden met de minheap.
+ * Het doel van de class is om willekeurige getallen in een minheap te krijgen waarna Replacement Selection wordt uitgevoerd. 
+ * De geordene getallen worden vervolgens weggeschreven in output file.
+ *
+ */
 public class RSHeap
 {
 	private int[] input;
@@ -16,6 +24,11 @@ public class RSHeap
 	private BufferedWriter bw;	
 	private ArrayList<String> runFileNames;
 	
+	/**
+	 * 
+	 * @param N De size van de heap
+	 * Variabelen worden hier geïnitialiseerd
+	 */
 	public RSHeap(int N)
 	{
 		assert N <0 : "ongeldige waarde";
@@ -28,17 +41,21 @@ public class RSHeap
 		
 		
 	}
-	
+	/**
+	 * 
+	 * @param N de size van de heap
+	 * Deze methode maakt een inputfile met random getallen
+	 */
 	public void createInputFile(int N)
 	{
 		input = filegen.generate(N, "numbers.txt");
 	}
 	
-	public void printArray(int [] arrayToPrint)
-	{
-		System.out.println(Arrays.toString(arrayToPrint));
-	}
 	
+	/**
+	 * Deze methode doet de runs als het ware. Ook wordt hier RS uitgevoerd.
+	 * De pseudocode voor RS is hier te vinden: http://scis.athabascau.ca/html/lo/repos/comp272/applets/replacement/index.html
+	 */
 	public void createRuns()
 	{
 		int runNr = 0;
@@ -88,7 +105,10 @@ public class RSHeap
 	
 			
 
-	
+	/**
+	 * 
+	 * @return De nieuwe heap die gemaakt is met de oude heap en de insert methode
+	 */
 	public Heap buildHeap()
 	{
 		Heap oldHeap = theHeap;
@@ -108,19 +128,22 @@ public class RSHeap
 				}
 			}
 		}
-		//Heap is al vaker gebruikt
+		
 		for(int i = nrOfElements; i < heapSize - 1; i++)
 		{
 			newHeap.insert(getNext());
 			nrOfElements++;
-			//printArray(newHeap);
+			
 		}
 		return newHeap;
 	}
 	
 	
 		
-	
+	/**
+	 * 
+	 * @return Het volgende getal uit de inputfile
+	 */
 	private int getNext()
 	{
 		int temp = input[inputIndex];
@@ -128,12 +151,20 @@ public class RSHeap
 		return temp;
 	}
 	
-
+	/**
+	 * 
+	 * @return Een lijst met alle filenamen 
+	 */
 	public ArrayList<String> getRunFileNames()
 	{
 		return runFileNames;
 	}
 	
+	/**]
+	 * 
+	 * @param fileName De naam van de file die een writer krijgt
+	 * @return
+	 */
 	public BufferedWriter initWriter(String fileName)
 	{
 		assert fileName !=null : "filename mag niet leeg zijn";
@@ -149,6 +180,11 @@ public class RSHeap
 		return null;
 	}
 
+	/**
+	 * 
+	 * @param bw De writer van de file
+	 * @param element Het getal die weggeschreven moet worden
+	 */
 	public void writeToFile(BufferedWriter bw, int element)
 	{
 		assert bw !=null : "writer mag niet null zijn";
@@ -162,7 +198,10 @@ public class RSHeap
 		}
 	}
 	
-	
+	/**
+	 * 
+	 * @return True als de input leeg is en false dat niet zo is
+	 */
 	private boolean inputEmpty()
 	{
 		if(input.length  == inputIndex + 1)
